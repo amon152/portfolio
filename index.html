@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio</title>
+    </head>
+    <body>
+
+         
+         <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#home" class="nav__logo">Portfolio</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>   
+
+        <main class="l-main">
+            
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi there,<br>I'am <span class="home__title-color">Amon</span><br>A Developer and consultant </h1>
+
+                    <a href="https://drive.google.com/file/d/16biE3P6l_2X7PSMfjfnaDAbYaJi5x5CT/view" class="button">View My Resume</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/in/amon-kipchirchir-7496bb22a/" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/_amon.kip/" class="home__social-icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="https://github.com/amon152" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">    
+                    <img src="https://pin.it/twHImQf" alt="">
+                </div>
+            </section>
+
+            
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="img/about.png" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I'am kipchirchir Amon</h2>
+                        <p class="about__text">a computer science graduate, love building scalable user-friendly software. Highly skilled in data visualization and web development. Currently studying python and data structures and algorithms.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <div class="work__img">
+                        <img src="img/1.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/2.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/3.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/4.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/5.jpg" alt="">
+                    </div>
+                    <div class="work__img">
+                        <img src="img/6.jpg" alt="">
+                    </div>
+                </div>
+            </section>
+
+           <section class="contact section" id="contact">
+            <div class="container">
+                <form onsubmit="sendEmail(); reset(); return false;">
+                    <h3>GET IN TOUCH</h3>
+                    <input type="text" id="name" placeholder="your name" required>
+                    <input type="email" id="email" placeholder="email" required>
+                    <input type="text" id="phone" placeholder="phone no." required>
+                    <textarea id="message" rows="4" placeholder="shoot me a message"></textarea>
+                    <button type="submit">send</button>
+                </form>
+            </div>
+        </main>
+    </section>
+       
+        <footer class="footer">
+            <div class="footer__social">
+                
+                <a href="https://www.instagram.com/_amon.kip/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://twitter.com/amonkipchirchi9" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p>&#169; 2022 copyright all right reserved</p>
+        </footer>
+
+        <script src=" https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail() {
+                Email.send({
+                Host : "smtp.gmail.com",
+                Username : "sprmbetting@gmail.com",
+                Password : "",
+                To : '',
+                From : document.getElementById("email").value,
+                Subject : "New contact form inquery",
+                Body : "Name: " + document.getElementById("name").value
+                    + "<br> Email: " +    document.getElementById("email").value
+                    +   "<br> Phone no: " +    document.getElementById("phone").value
+                    +   "<br> Message: " +    document.getElementById("message").value     
+
+}).then(    
+  message => alert("message sent succesfully")
+);
+            }
+        </script>
+    </body>
+</html>
